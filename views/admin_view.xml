@@ -1,0 +1,114 @@
+<odoo>
+  <data>
+
+<!-- Defining tree form to administrator model -->
+    <record id="tickets_fhoi.administrator_view_list" model="ir.ui.view">
+      <field name="name">tickets_fhoi.administrator.view.tree</field>
+      <field name="model">tickets_fhoi.administrator</field>
+      <field name="arch" type="xml">
+        <tree decoration-bf="doctor_name">
+          <field name="doctor_name" />
+          <field name="prefix_ticket" />
+        </tree>
+      </field>
+    </record>
+
+  <!-- Defining Administrator's form view -->
+    <record id="tickets_fhoi.administrator_view_form" model="ir.ui.view">
+        <field name="name">tickets_fhoi.administrator.view.form</field>
+        <field name="model">tickets_fhoi.administrator</field>
+        <field name="arch" type='xml'>
+            <form string="Tickets Card" class="o_module_form">
+                <sheet>
+                  <div class="oe_title">
+                    <h1><span>Doctor: </span><field name="doctor_name" placeholder="First name only. E.g: MARCO"/></h1>
+                  </div>
+                    <group>
+                    <field name="prefix_ticket" placeholder="Two letters"/>
+                    </group>
+                    <notebook>
+                      <page string="Tickets">
+                        <group>
+                          <field name="tickets_ids" readonly='1' mode='kanban'/>  
+                        </group>
+                        
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!-- Defining tree form to archived_data model -->
+    <record id="tickets_fhoi.archived_data_view_list" model="ir.ui.view">
+      <field name="name">tickets_fhoi.archived.data.view.tree</field>
+      <field name="model">tickets_fhoi.archived_data</field>
+      <field name="arch" type="xml">
+        <tree decoration-bf="data_date" create="false">
+          <field name="data_date" />
+          <field name="name" />
+          <field name="called" />
+          <field name="waiting" />
+          <field name="total" />
+        </tree>
+      </field>
+    </record>
+
+  <!-- Defining menus -->
+
+    <!-- Menu actions -->
+
+    <record id="tickets_fhoi.administrator_action_window" model="ir.actions.act_window">
+      <field name="name">Admin Queues</field>
+      <field name="res_model">tickets_fhoi.administrator</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="tickets_fhoi.archived_data_action_window" model="ir.actions.act_window">
+      <field name="name">Archived Data</field>
+      <field name="res_model">tickets_fhoi.archived_data</field>
+      <field name="view_mode">tree</field>
+    </record>
+  
+  <!-- Top menu item -->
+  
+  <menuitem
+    id="tickets_fhoi.menu_root"
+    name="Tickets FHOI"
+    sequence="5"
+    />
+
+  <!-- menu categories -->
+
+  <!-- <menuitem
+    id="tickets_fhoi.administrator_menu"
+    name="Attention Queues"
+    action="tickets_fhoi.administrator_action_window"
+    parent="tickets_fhoi.menu_root"
+    sequence="2"/> -->
+
+  <menuitem
+    id="tickets_fhoi.administrator_menu"
+    name="Attention Queues"
+    parent="tickets_fhoi.menu_root"
+    sequence="2"/>
+  
+  <!-- Sub menus -->
+
+  <menuitem
+    id="tickets_fhoi.menu_create_queue"
+    name="Create Queues"
+    action="tickets_fhoi.administrator_action_window"
+    parent="tickets_fhoi.administrator_menu"
+    sequence="1"/>
+
+  <menuitem
+    id="tickets_fhoi.menu_archived_data"
+    name="Archived Data"
+    action="tickets_fhoi.archived_data_action_window"
+    parent="tickets_fhoi.administrator_menu"
+    sequence="2"/>
+  </data>
+
+</odoo>
+

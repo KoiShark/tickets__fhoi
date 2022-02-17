@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tickets_FHOI",
+    'name': "Tickets FHOI",
 
     'summary': """
         Generar tickets para los pacientes""",
@@ -19,17 +19,32 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','web','board'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/tickets_fhoi_security.xml',
+        'security/ir.model.access.csv',
+        'views/admin_view.xml',
+        'views/ticket_view.xml',
+        'views/agent_view.xml',
+        'views/doctor_view.xml',
+        'views/screen_view.xml',
+        'views/dashboard_view.xml',
+        'report/ticket_template.xml',
+        'report/tickets_fhoi_report.xml',
+        'automation/cron_job.xml'
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    'application': True
+    'application': True,
+    'assets': {
+        'web.assets_backend': [
+            'tickets_fhoi/static/src/css/styles.css',
+        ]
+    },
+    'license': 'LGPL-3',
 }

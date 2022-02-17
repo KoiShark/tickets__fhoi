@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <!-- Defining kanban view -->
+    <record id="tickets_fhoi.tickets_doctor_view_kanban" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.doctor.view.kanban</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type='xml'>
+            <kanban create='false' limit='1' class='o_kanban_mobile' js_class="crm_kanban">
+                <field name="ticket_code" />
+                <field name="doctor_id" />
+                <field name="ticket_status" />
+                <templates>
+                <link rel="stylesheet" type="text/scss" href="/tickets_fhoi/static/src/css/styles.css"/>
+                    <t t-name="kanban-box">
+                        <div  class="kanban_doctor">
+                            <div class='content'>
+                                <div class='image'>
+                                    <div class='image_logo'></div>
+                                </div>
+                                <div class='text'>
+                                    <div class="ticket_box_doctor">
+                                        <h1 class="h1-back-doctor">
+                                            <field name="ticket_code"/>&amp;nbsp;
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- <div class='oe_kanban_details'>
+                            <p>
+                            <h2 >Doctor:
+                            <t t-esc="record.doctor_id.value"/>
+                            </h2>
+                            </p>
+                            <p>
+                            <h4>Status:
+                            <t t-esc="record.ticket_status.value"/>
+                            </h4>
+                            </p>
+                        </div> -->
+                        <hr/>
+                        <div class="button_doctor">
+                            <button type='object' name='update_current_ticket' class='btn btn-primary btn-lg'>Call</button>
+                            <!-- <button type='object' name='update_current_status' class='btn btn-primary btn-lg float-right' style='width:45%'>Next</button> -->
+                        </div>
+                        
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+     <!-- Defining menu -->
+    <!-- <record id="tickets_fhoi.tickets_doctor_action_window" model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="domain">[('doctor_id.doctor_name','=','Joe'),('ticket_status','=','w')]</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="tickets_fhoi.tickets_doctor_view_kanban"/>
+        <field name="target">current</field>
+    </record> -->
+
+    <!-- Defining server action  -->
+
+    <record id="tickets_fhoi.action_server_doctor" model="ir.actions.server">
+        <field name="name">Server Action Doctor</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="tickets_fhoi.model_tickets_fhoi_tickets"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.get_filtered_record()
+        </field>
+
+    
+    </record>
+
+    <!-- menu categories -->
+    <menuitem
+     id="tickets_fhoi.tickets_doctor_menu"
+     name="Doctor"
+     action="tickets_fhoi.action_server_doctor"
+     parent="tickets_fhoi.menu_root"
+     sequence="4"/>
+    </data>
+    
+
+</odoo>

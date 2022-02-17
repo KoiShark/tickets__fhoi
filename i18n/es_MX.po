@@ -1,0 +1,371 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tickets_fhoi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-13 11:55+0000\n"
+"PO-Revision-Date: 2022-02-13 11:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.tickets_dashboard_view_kanban
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.tickets_doctor_view_kanban
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.administrator_view_form
+msgid "<span>Doctor: </span>"
+msgstr "Doctor:"
+
+#. module: tickets_fhoi
+#: model:ir.model.constraint,message:tickets_fhoi.constraint_tickets_fhoi_administrator_prefix_ticket_unique
+msgid "A doctor must have a unique identifier"
+msgstr "El doctor debe tener un identificador único"
+
+#. module: tickets_fhoi
+#: model:ir.module.category,description:tickets_fhoi.module_category_tickets
+msgid "Access security for tickets_fhoi"
+msgstr "Acceso de seguridad para tickets_fhoi"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.administrator_action_window
+msgid "Admin Queues"
+msgstr "Colas de Atención"
+
+#. module: tickets_fhoi
+#: model:res.groups,name:tickets_fhoi.group_tickets_fhoi_admin
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.tickets_agent_action_window
+#: model:ir.ui.menu,name:tickets_fhoi.tickets_agent_menu
+#: model:res.groups,name:tickets_fhoi.group_tickets_fhoi_agent
+msgid "Agent"
+msgstr "Agente"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.archived_data_action_window
+#: model:ir.ui.menu,name:tickets_fhoi.menu_archived_data
+msgid "Archived Data"
+msgstr "Datos guardados"
+
+#. module: tickets_fhoi
+#: model:ir.ui.menu,name:tickets_fhoi.administrator_menu
+msgid "Attention Queues"
+msgstr "Administrador"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.action_available_tickets
+msgid "Available Tickets"
+msgstr "Tickets Disponibles"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.tickets_doctor_view_kanban
+msgid "Call"
+msgstr "Llamar"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__called_date
+msgid "Call Date"
+msgstr "Fecha(atención)"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__tickets_called
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__called
+msgid "Called"
+msgstr "Atendidos"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.ticket_view_form
+msgid "Code:"
+msgstr "Código:"
+
+#. module: tickets_fhoi
+#: model:ir.ui.menu,name:tickets_fhoi.menu_create_queue
+msgid "Create Queues"
+msgstr "Crear Colas de Atención"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__create_uid
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__create_uid
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__create_date
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__create_date
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__current_ticket
+msgid "Current Ticket"
+msgstr "Ticket Actual"
+
+#. module: tickets_fhoi
+#: model:ir.ui.menu,name:tickets_fhoi.dashboard_menu
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: tickets_fhoi
+#: model:ir.model,name:tickets_fhoi.model_tickets_fhoi_archived_data
+msgid "Data saved from Queues"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__data_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__display_name
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__display_name
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__doctor_name
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__doctor_id
+#: model:ir.ui.menu,name:tickets_fhoi.tickets_doctor_menu
+#: model:res.groups,name:tickets_fhoi.group_tickets_fhoi_doctor
+msgid "Doctor"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.report_ticket
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.ticket_view_form
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.tickets_dashboard_view_kanban
+msgid "Doctor:"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.constraint,message:tickets_fhoi.constraint_tickets_fhoi_administrator_doctor_name_unique
+msgid "Doctors cannot have the same name"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.administrator_view_form
+msgid "First name only. E.g: MARCO"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model,name:tickets_fhoi.model_tickets_fhoi_tickets
+msgid "Generate tickets"
+msgstr "Generar Tickets"
+
+#. module: tickets_fhoi
+#: model:ir.model,name:tickets_fhoi.model_tickets_fhoi_administrator
+msgid "Generates queues"
+msgstr "Generar Colas"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__id
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__id
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__id
+msgid "ID"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__prefix_ticket
+msgid "Identifier"
+msgstr "Identificador"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,help:tickets_fhoi.field_tickets_fhoi_administrator__prefix_ticket
+msgid "Identify tickets-2 char"
+msgstr "Identificar tickets - 2 letras"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator____last_update
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data____last_update
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__write_uid
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__write_uid
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__write_date
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__write_date
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.ticket_view_form
+msgid "Print Ticket"
+msgstr "Imprimir Ticket"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.tickets_screen_action_window
+#: model:ir.ui.menu,name:tickets_fhoi.tickets_screen_menu
+#: model:res.groups,name:tickets_fhoi.group_tickets_fhoi_screen
+msgid "Screen"
+msgstr "Pantalla"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.screen_dash_view
+msgid "Screen Dash"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.dashboard_action_window
+msgid "Screen Dashboard"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.actions.server,name:tickets_fhoi.action_server_doctor
+msgid "Server Action Doctor"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.report_ticket
+msgid "Services: Lower Body"
+msgstr "Servicios: Miembros Inferiores"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.action_status_graph_ticket
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__ticket_status
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.ticket_view_graph
+msgid "Status"
+msgstr "Estado"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.screen_dash_view
+msgid "Status Graph"
+msgstr "Gráfico de Estado"
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.action_status_queue
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.screen_dash_view
+msgid "Status Queue"
+msgstr "Colas de Atención"
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.tickets_dashboard_view_kanban
+msgid "Status:"
+msgstr "Estado:"
+
+#. module: tickets_fhoi
+#: model:ir.actions.report,name:tickets_fhoi.report_print_ticket
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_tickets__ticket_code
+msgid "Ticket"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.report_ticket
+msgid "Ticket:"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.actions.act_window,name:tickets_fhoi.tickets_action_window
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__tickets_ids
+#: model:ir.ui.menu,name:tickets_fhoi.tickets_menu
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.administrator_view_form
+msgid "Tickets"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.administrator_view_form
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.ticket_view_form
+msgid "Tickets Card"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.ui.menu,name:tickets_fhoi.menu_root
+msgid "Tickets FHOI"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.actions.server,name:tickets_fhoi.tickets_fhoi_auto_saving_ir_actions_server
+#: model:ir.cron,cron_name:tickets_fhoi.tickets_fhoi_auto_saving
+#: model:ir.cron,name:tickets_fhoi.tickets_fhoi_auto_saving
+msgid "Tickets_FHOI: autosaving queues in another table "
+msgstr "Tickets_FHOI: guardado automático en otra tabla"
+
+#. module: tickets_fhoi
+#: model:ir.actions.server,name:tickets_fhoi.tickets_fhoi_auto_erase_tickets_ir_actions_server
+#: model:ir.cron,cron_name:tickets_fhoi.tickets_fhoi_auto_erase_tickets
+#: model:ir.cron,name:tickets_fhoi.tickets_fhoi_auto_erase_tickets
+msgid "Tickets_FHOI: deleting tickets after working day"
+msgstr "Tickets_FHOI: eliminar tickets después del día de trabajo"
+
+#. module: tickets_fhoi
+#: model:ir.module.category,name:tickets_fhoi.module_category_tickets
+msgid "Tickets_fhoi"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__tickets_total
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__total
+msgid "Total"
+msgstr ""
+
+#. module: tickets_fhoi
+#: model_terms:ir.ui.view,arch_db:tickets_fhoi.administrator_view_form
+msgid "Two letters"
+msgstr "2 letras"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,help:tickets_fhoi.field_tickets_fhoi_administrator__doctor_name
+msgid "Type doctor's name"
+msgstr "Ingresa el nombre del doctor"
+
+#. module: tickets_fhoi
+#: model:res.groups,comment:tickets_fhoi.group_tickets_fhoi_admin
+msgid "User who access all the data"
+msgstr "Usuario que accede a todos los datos"
+
+#. module: tickets_fhoi
+#: model:res.groups,comment:tickets_fhoi.group_tickets_fhoi_screen
+msgid "Users just seeing the Screen"
+msgstr "Usuario que ve la pantalla"
+
+#. module: tickets_fhoi
+#: model:res.groups,comment:tickets_fhoi.group_tickets_fhoi_doctor
+msgid "Users who consume tickets"
+msgstr "Usuario que atiende a los tickets"
+
+#. module: tickets_fhoi
+#: model:res.groups,comment:tickets_fhoi.group_tickets_fhoi_agent
+msgid "Users who create new tickets"
+msgstr "Usuario que crea tickets"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_administrator__tickets_waiting
+#: model:ir.model.fields,field_description:tickets_fhoi.field_tickets_fhoi_archived_data__waiting
+msgid "Waiting"
+msgstr "En espera"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields.selection,name:tickets_fhoi.selection__tickets_fhoi_tickets__ticket_status__c
+msgid "called"
+msgstr "atendido"
+
+#. module: tickets_fhoi
+#: model:ir.model.fields.selection,name:tickets_fhoi.selection__tickets_fhoi_tickets__ticket_status__w
+msgid "waiting"
+msgstr "en espera"

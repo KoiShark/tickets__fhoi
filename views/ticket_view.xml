@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- Defining tickets' tree view -->
+    <record id="tickets_fhoi.ticket_view_list" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.view.tree</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type='xml'>
+            <tree decoration-danger="ticket_status == 'w'" decoration-bf="ticket_status" decoration-success="ticket_status == 'c'">
+                <field name="ticket_code" />
+                <field name="doctor_id" />
+                <field name="ticket_status" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Defining tickets' form view -->
+    <record id="tickets_fhoi.ticket_view_form" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.view.form</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type='xml'>
+            <form string="Tickets Card" class="o_module_form">
+            <link rel="stylesheet" type="text/scss" href="/tickets_fhoi/static/src/css/styles.css"/>
+                <div class="ticket_form">
+                <sheet >
+                    <div class='content'>
+                        <div class='image'>
+                            <div class='image_logo'></div>
+                        </div>
+                        <div class='text'>
+                                <div class="ticket_box" >
+                                    <p>Code: </p>
+                                    <h1 class='h1-back'>
+                                        <field name="ticket_code"/>
+                                    </h1>
+                                </div>
+                                <div class="doctor">
+                                    <h2>Doctor: <field name="doctor_id" /></h2>
+                                </div>
+                        </div>
+                    
+                    </div>
+                    <hr/>
+                    <footer class="button_style">
+                        <button string="Print Ticket" name="print_ticket" type="object" class='btn btn-primary btn-lg' style=''/>
+                    </footer>
+                </sheet>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Defining tickets' graph view -->
+    <record id="tickets_fhoi.ticket_view_graph" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.view.graph</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type="xml">
+            <graph string="Status" type="pie" disable_linking='1'>
+                <field name="ticket_status"/>    
+            </graph>
+        </field>
+    </record>
+    
+    <!-- Defining menu -->
+    <record id="tickets_fhoi.tickets_action_window" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <!-- menu categories -->
+    <menuitem
+     id="tickets_fhoi.tickets_menu"
+     name="Tickets"
+     action="tickets_fhoi.tickets_action_window"
+     parent="tickets_fhoi.menu_root"
+     sequence="3"/>
+
+    </data>
+</odoo>

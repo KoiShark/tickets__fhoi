@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+
+class TestUI(http.Controller):
+    
+    @http.route('/testui/hello', auth='public')
+    def index(self, **kw):
+        return http.request.render('tickets_fhoi.test')
 
 # class TicketsFhoi(http.Controller):
     
@@ -19,3 +25,4 @@
 #         return http.request.render('tickets__fhoi.object', {
 #              'object': obj
 #         })
+

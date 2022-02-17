@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="tickets_fhoi_auto_saving" model="ir.cron">
+        <field name="name">Tickets_FHOI: autosaving queues in another table </field>
+        <field name="model_id" ref="model_tickets_fhoi_administrator"/>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="code">model.archived_queue()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="tickets_fhoi_auto_erase_tickets" model="ir.cron">
+        <field name="name">Tickets_FHOI: deleting tickets after working day</field>
+        <field name="model_id" ref="model_tickets_fhoi_tickets"/>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="code">model.delete_tickets()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <!-- <record id="tickets_fhoi_auto_reload_screen" model="ir.cron">
+        <field name="name">Tickets_FHOI: autoreloading screen from patients and doctors</field>
+        <field name="model_id" ref="model_tickets_fhoi_tickets"/>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="code">model.reload()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+    </record> -->
+
+    </data>
+    
+</odoo>

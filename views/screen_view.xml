@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <!-- Defining kanban view -->
+    <record id="tickets_fhoi.tickets_screen_view_kanban" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.screen.view.kanban</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type='xml'>
+            <kanban create='false' default_order="called_date desc" class='o_kanban_mobile' limit='4' >
+                <field name="ticket_code" />
+                <field name="doctor_id" />
+                <field name="ticket_status" />
+                <templates>
+                 <link rel="stylesheet" type="text/scss" href="/tickets_fhoi/static/src/css/styles.css"/>
+                    <t t-name="kanban-box">
+                        <!-- <div  style='margin-left:25%; margin-right:25%; width:50%;'>
+                        <div style="width:150px; height:150px; background-image: url(https://www.fhoi.org.ve/wp-content/uploads/2020/08/background.svg);"></div>
+                        <div style=''>
+                        <center>
+                        <h1 style='color:blue; font-size:3rem;' class="o_kanban_record_title">
+                            <field name="ticket_code"/>&amp;nbsp;
+                        </h1>
+                        <div class='oe_kanban_details'>
+                            <p>
+                            <h2 >Doctor:
+                            <t t-esc="record.doctor_id.value"/>
+                            </h2>
+                            </p>
+                            <p>
+                            <h4>Status:
+                            <t t-esc="record.ticket_status.value"/>
+                            </h4>
+                            </p>
+                        </div>
+                        </center>
+                        </div>
+                        </div> -->
+                        <div class="kanban_ticket">
+                            <div class='content'>
+                            <div class='image'>
+                                <div class='image_logo'></div>
+                            </div>
+                            <div class='text'>
+                                <div class="ticket_box_doctor" >
+                                    <h1 class='h1-back'>
+                                        <field name="ticket_code"/>
+                                    </h1>
+                                     <h2><field name="doctor_id" /></h2>
+                                </div>
+                                <!-- <div class="doctor">
+                                    <h2><field name="doctor_id" /></h2>
+                                </div> -->
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                
+            </kanban>
+        </field>
+    </record>
+    
+     <!-- Defining menu -->
+    <record id="tickets_fhoi.tickets_screen_action_window" model="ir.actions.act_window">
+        <field name="name">Screen</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="domain">[('ticket_status','=','c')]</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="tickets_fhoi.tickets_screen_view_kanban"/>
+        <field name="target">current</field>
+    </record>
+
+    <!-- menu categories -->
+    <menuitem
+     id="tickets_fhoi.tickets_screen_menu"
+     name="Screen"
+     action="tickets_fhoi.tickets_screen_action_window"
+     parent="tickets_fhoi.menu_root"
+     sequence="5"/>
+    </data>
+    
+
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <!-- Defining a security category -->
+        <record id="tickets_fhoi.module_category_tickets" model="ir.module.category">
+            <field name="name">Tickets_fhoi</field>
+            <field name="description">Access security for tickets_fhoi</field>
+            <field name="sequence">100</field>
+        </record>
+
+    <!-- Defining security groups -->
+        <record id="group_tickets_fhoi_agent" model="res.groups">
+            <field name="name">Agent</field>
+            <field name="category_id" ref="tickets_fhoi.module_category_tickets"/>
+            <field name="comment">Users who create new tickets</field>
+        </record>
+
+        <record id="group_tickets_fhoi_doctor" model="res.groups">
+            <field name="name">Doctor</field>
+            <field name="category_id" ref="tickets_fhoi.module_category_tickets"/>
+            <field name="comment">Users who consume tickets</field>
+        </record>
+
+        <record id="group_tickets_fhoi_screen" model="res.groups">
+            <field name="name">Screen</field>
+            <field name="category_id" ref="tickets_fhoi.module_category_tickets"/>
+            <field name="comment">Users just seeing the Screen</field>
+        </record>
+
+        <record id="group_tickets_fhoi_admin" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="tickets_fhoi.module_category_tickets"/>
+            <field name="comment">User who access all the data</field>
+            <!-- The administrator belongs to all the groups -->
+            <field name="implied_ids" eval="[(4, ref('group_tickets_fhoi_agent')), (4, ref('group_tickets_fhoi_screen'))]"/>
+            <!-- Adding Odoo's admin users -->
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+    
+
+</odoo>

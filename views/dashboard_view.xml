@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <!-- Defining kanban view to dashboard -->
+    <record id="tickets_fhoi.tickets_dashboard_view_kanban" model="ir.ui.view">
+        <field name="name">tickets_fhoi.tickets.dashboard.view.kanban</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="arch" type='xml'>
+            <kanban create='false' default_order="id asc" class="o_kanban_small_column o_opportunity_kanban">
+                <field name="ticket_code" />
+                <field name="doctor_id" />
+                <field name="ticket_status" />
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div style='width:20%;'>
+                        <center>
+                        <h1 style='color:blue; font-size:2rem;' class="o_kanban_record_title">
+                            <field name="ticket_code"/>&amp;nbsp;
+                        </h1>
+                        <div class='oe_kanban_details'>
+                            <p>
+                            <h2 >Doctor:
+                            <t t-esc="record.doctor_id.value"/>
+                            </h2>
+                            </p>
+                            <p>
+                            <h4>Status:
+                            <t t-esc="record.ticket_status.value"/>
+                            </h4>
+                            </p>
+                        </div>
+                        </center>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <!-- Defining tree view for status queue -->
+
+        <record id="tickets_fhoi.status_queue_view_tree" model="ir.ui.view">
+        <field name="name">tickets_fhoi.status.queue.view.tree</field>
+        <field name="model">tickets_fhoi.administrator</field>
+        <field name="arch" type='xml'>
+            <tree decoration-bf="doctor_name">
+                <field name="doctor_name" />
+                <field name="current_ticket" />
+                <field name="tickets_waiting"/>
+                <field name="tickets_called"/>
+                <field name="tickets_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tickets_fhoi.action_available_tickets" model="ir.actions.act_window">
+        <field name="name">Available Tickets</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="domain">[('ticket_status','=','w')]</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="tickets_fhoi.tickets_dashboard_view_kanban"/>
+    </record>
+
+    <record id="tickets_fhoi.action_status_queue" model="ir.actions.act_window">
+        <field name="name">Status Queue</field>
+        <field name="res_model">tickets_fhoi.administrator</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="tickets_fhoi.status_queue_view_tree"/>
+    </record>
+
+
+    <record id="tickets_fhoi.action_status_graph_ticket" model="ir.actions.act_window">
+        <field name="name">Status</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="tickets_fhoi.ticket_view_graph"/>
+    </record>
+
+    <record id="screen_dash_view" model="ir.ui.view">
+        <field name="name">Screen Dash</field>
+        <field name="model">board.board</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Screen Dash">
+                <board style="1-1">
+                    <column>
+                        <action name="%(tickets_fhoi.action_status_graph_ticket)d" string="Status Graph"/>
+                        <!-- <action name="%(tickets_fhoi.action_available_tickets)d" string="Waiting Tickets"/> -->
+                    </column>
+                    <column>
+                        <action name="%(tickets_fhoi.action_status_queue)d" string="Status Queue"/>
+                    </column>
+                </board>
+            </form>
+        </field>
+    </record>
+    
+    <record id="tickets_fhoi.dashboard_action_window" model="ir.actions.act_window">
+        <field name="name">Screen Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="screen_dash_view" />
+    </record>
+    
+    
+    <menuitem
+        id="tickets_fhoi.dashboard_menu"
+        name="Dashboard"
+        parent="tickets_fhoi.menu_root"
+        action="tickets_fhoi.dashboard_action_window"
+        sequence="1"/>
+    </data>
+    
+
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_ticket">
+        <t t-call="web.html_container">
+             <t t-foreach="docs" t-as="ticket">
+                    <!-- <div style='width: 100%;
+                                display: block;
+                                float: left;'>
+                        
+                        <div style='width: 50%;
+                                    display: flex;
+                                    flex-flow: column wrap;
+                                    justify-content: center;
+                                    align-items: center;
+                                    color: #fbbb35;'>
+
+                                <div style="width: 100%;
+                                            height: 80px;
+                                            margin: 10px;
+                                            flex-basis: 80px;
+                                            font-weight: bold;" >
+
+                                    <h3>Ticket No.</h3>
+                                    <h3 style=' color: blue;
+                                                font-weight:bold;'>
+                                        <span t-field="ticket.ticket_code" />
+                                    </h3>
+                                </div>
+                                <div style="width: 100%;
+                                            margin: 10px;">
+                                    <h3>Doctor: <span t-field="ticket.doctor_id" /></h3>
+                                    <h3>External Consultation: Lower Body Services</h3>
+                                </div>
+                            <div style='width: 90px;
+                                        height: 90px;
+                                        display: block;
+                                        float: left;'
+                                        >
+                                <img src="/tickets_fhoi/static/ref/logo_fhoi.svg" style="width:100%; height:100%"></img>
+
+                            </div>
+                        </div>
+                    
+                    </div> -->
+                    
+                    <div id="content" style="background-color: gray;">
+                        <center>
+                        <div id="text" style="color: black;">
+                            <h2 style=''>Ticket: <span t-field="ticket.ticket_code" /></h2>
+                            <h2>Doctor: <span t-field="ticket.doctor_id" /></h2>
+                            <h2>Services: Lower Body</h2>
+                        </div>
+                        </center>
+                        <!-- <div id="image" style="width: 90px; height:90px;">
+                            <img t-attf-src="/tickets_fhoi/static/ref/logo_fhoi.svg" style="width:100%; height:100%"></img>
+                        </div> -->
+                    </div>
+            
+            </t>
+        </t>
+    </template>
+
+</odoo>

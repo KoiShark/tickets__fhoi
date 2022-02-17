@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+    <!-- Defining menu -->
+    <record id="tickets_fhoi.tickets_agent_action_window" model="ir.actions.act_window">
+        <field name="name">Agent</field>
+        <field name="res_model">tickets_fhoi.tickets</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="tickets_fhoi.ticket_view_form"/>
+        <field name="target">current</field>
+    </record>
+
+    <!-- menu categories -->
+    <menuitem
+     id="tickets_fhoi.tickets_agent_menu"
+     name="Agent"
+     action="tickets_fhoi.tickets_agent_action_window"
+     parent="tickets_fhoi.menu_root"
+     sequence="6"/>
+    
+    
+    </data>
+    
+
+</odoo>

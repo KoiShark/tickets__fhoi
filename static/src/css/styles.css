@@ -1,0 +1,141 @@
+.ticket_form {
+    margin-left:25% !important;
+    margin-right:25% !important;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width:50% !important;
+    height:250px;
+    background: #fff;
+    border: 1px black double;
+    border-radius: 5px;
+}
+
+.kanban_ticket{
+    margin-left:3% !important;
+    margin-right:3% !important;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width:40% !important;
+    height:150px;
+    background: #fff;
+    border: 1px black double;
+    border-radius: 5px;
+}
+.kanban_doctor{
+    margin-left:25% !important;
+    margin-right:25% !important;
+    margin-top: 10px;
+    width:50% !important;
+    height:200px;
+    background: #fff;
+    border: 1px black double;
+    border-radius: 5px;
+}
+.button_style{
+    width: 60%;
+    height: 50px;
+    margin-left:20%;
+    margin-right: 20%;
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+}
+.button_doctor{
+    width: 60%;
+    height: 50px;
+    margin-left:20%;
+    margin-right: 20%;
+}
+.button_doctor button{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+}
+
+.image{
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.image_logo {
+    width: 90%;
+    height: 150px;
+    background-image: url(/tickets_fhoi/static/ref/logo_fhoi.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 10px;
+    flex-basis: 100px;
+}
+
+.text{
+    width: 30%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: #fbbb35;
+}
+
+.ticket_box{
+    width: 100%;
+    height: 80px;
+    margin: 10px;
+    flex-basis: 80px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fbbb35;
+}
+
+.ticket_box_doctor{
+    width: 100%;
+    height: 80px;
+    margin: 40px 0 0 0;
+    flex-basis: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.ticket_box_doctor h2{
+    color: #fbbb35;
+}
+
+.h1-back{
+    background-image: url(/tickets_fhoi/static/ref/background.svg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #404040;
+    background-size: contain;
+    background-position: revert;
+    font-size: 3rem;
+
+}
+
+.h1-back-doctor{
+    background-image: url(/tickets_fhoi/static/ref/background.svg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #404040;
+    background-size: contain;
+    background-position: revert;
+    font-size: 5rem;
+
+}
+
+.doctor{
+    width: 100%;
+    margin: 10px;
+    flex-basis: 10px;
+}
+.doctor h2{
+    color: #fbbb35;
+}

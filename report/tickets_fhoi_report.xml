@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_ticket_print" model="report.paperformat">
+        <field name="name">Ticket_print</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">50</field>
+        <field name="page_width">100</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="report_print_ticket" model="ir.actions.report">
+        <field name="name">Ticket</field>
+        <field name="model">tickets_fhoi.tickets</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tickets_fhoi.report_ticket</field>
+        <field name="report_file">tickets_fhoi.report_ticket</field>
+        <field name="paperformat_id" ref="tickets_fhoi.paperformat_ticket_print"/>
+        <field name="binding_model_id" ref="model_tickets_fhoi_tickets" />
+    </record>
+
+</odoo>

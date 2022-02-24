@@ -21,19 +21,5 @@
         </template>
 -->
 
-<template id="test">
-
-  
-        <div class="oe_structure">
-          <div class="container">
-            <center><h3>Title</h3></center>
-            <p>
-              You can add all your content here.<br/>
-              <a t-attf-href="/example/detail" class="btn btn-info">Company detail page</a>
-            </p>
-          </div>
-        </div>
-      
-</template>
     </data>
 </odoo>

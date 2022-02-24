@@ -24,17 +24,6 @@
         <field name="numbercall">-1</field>
     </record>
 
-    <!-- <record id="tickets_fhoi_auto_reload_screen" model="ir.cron">
-        <field name="name">Tickets_FHOI: autoreloading screen from patients and doctors</field>
-        <field name="model_id" ref="model_tickets_fhoi_tickets"/>
-        <field name="type">ir.actions.server</field>
-        <field name="state">code</field>
-        <field name="code">model.reload()</field>
-        <field name="interval_number">1</field>
-        <field name="interval_type">minutes</field>
-        <field name="numbercall">-1</field>
-    </record> -->
-
     </data>
     
 </odoo>
